@@ -2,3 +2,47 @@
     width: 100%;
     background-color: aquamarine;
 }
+
+.note-con {
+    background-color: white;
+    display: grid;
+    grid-template-rows: auto 70% 30%;
+    text-align: center;
+}
+
+.note-input {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    resize: none;
+}
+.save-btn-con {
+    height: 100%;
+    background-color: aquamarine;
+}
+.save-note-btn {
+    width: 100%;
+    height: 100%;
+}
+
+/* for note inputs */
+.note-area-input {
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    cursor: text;
+}
+.note-tittle {
+    width: 100%;
+    border-radius: 2px;
+    padding-inline: 10px;
+    padding-block: 10px;
+    margin-block: 10px;
+}
+
+.note-area-input:focus {
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    /* Change the cursor style if needed */
+}
