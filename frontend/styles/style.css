@@ -1,0 +1,29 @@
+:root {
+    --border-main: #C7C7C7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+.page-con {
+    height: calc(100% - 60px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+
+.book-con-con {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    /* background-color: gray; */
+}
