@@ -35,7 +35,11 @@ async function addBookListNav() {
 
                 <div class="collapse multi-collapse" id="${grade}">
                     <div class="card card-body m-1 p-1">
-                        <button class="btn btn-primary rounded-0 my-2 load-book-btn" id="/${grade}/${subject}/${book}" type="button" aria-expanded="false" ">${subject}</button>
+                        <button class="btn btn-primary rounded-0 my-2 load-book-btn" id="/${grade}/${subject}/${book}" type="button" aria-expanded="false" ">
+                         <span class="spinner-grow spinner-grow-sm pdf-load-spin d-none" aria-hidden="true"></span>
+                          <span role="status">${subject}</span>
+                      
+                        </button>
                   
                     </div>
                 </div>`
@@ -49,6 +53,7 @@ async function addBookListNav() {
 }
 function addEventListenerToBooks() {
     const bookBtns = document.querySelectorAll(".load-book-btn");
+    const spinners = document.querySelectorAll(".pdf");
 
     bookBtns.forEach(singleBookBtn => {
         singleBookBtn.addEventListener("click", () => {
