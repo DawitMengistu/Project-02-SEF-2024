@@ -2,6 +2,7 @@
     height: 100%;
     width: 300px;
     border-right: 2px solid var(--border-main);
+    overflow-y: scroll;
 }
 
 
@@ -10,4 +11,9 @@
     width: 100%;
     height: calc(100vh - 100px);
     background-color: goldenrod;
+}
+
+.book-list-con {
+    display: grid;
+    grid-template-columns: repeat(auto, 1fr);
 }
