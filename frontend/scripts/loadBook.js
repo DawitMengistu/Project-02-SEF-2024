@@ -18,36 +18,31 @@ addBookListNav();
 async function addBookListNav() {
     await getBookList();
 
-    // Loop through each grade in the bookList
-    for (let grade in bookList) {
+    for (const grade in bookList) {
+        // Create collapsible structure for each grade
+        let gradeHTML = `
+          <a class="btn btn-primary rounded-0 my-2" data-bs-toggle="collapse" href="#${grade}" role="button" aria-expanded="false" aria-controls="${grade}">${grade}</a>
+          <div class="collapse multi-collapse" id="${grade}">
+        `;
 
-        // Loop through subjects in each grade
-        const subjects = bookList[grade];
-        for (let subject in subjects) {
-            console.log(`  Subject: ${subject}`);
-
-            // Check if the subject has a books array
-            if (subjects[subject].books) {
-                subjects[subject].books.forEach(book => {
-                    bookListCon.innerHTML += `
-                    <a class="btn btn-primary rounded-0 my-2" data-bs-toggle="collapse" href="#${grade}"
-                    role="button" aria-expanded="false" aria-controls="${grade}">${grade}</a>
-
-                <div class="collapse multi-collapse" id="${grade}">
-                    <div class="card card-body m-1 p-1">
-                        <button class="btn btn-primary rounded-0 my-2 load-book-btn" id="/${grade}/${subject}/${book}" type="button" aria-expanded="false" ">
-                         <span class="spinner-grow spinner-grow-sm pdf-load-spin d-none" aria-hidden="true"></span>
-                          <span role="status">${subject}</span>
-                      
-                        </button>
-                  
-                    </div>
-                </div>`
-                });
-            }
+        for (const subject in bookList[grade]) {
+            // Create button for each subject's book
+            let books = bookList[grade][subject]["books"];
+            books.forEach((book) => {
+                gradeHTML += `
+              <div class="card card-body m-1 p-1">
+                <button class="btn btn-primary rounded-0 my-2 load-book-btn" id="/${grade}/${subject}/${book}" type="button" aria-expanded="false">
+                  <span class="spinner-grow spinner-grow-sm pdf-load-spin d-none" aria-hidden="true"></span>
+                  <span role="status">${subject}</span>
+                </button>
+              </div>`;
+            });
         }
-    }
 
+        gradeHTML += `</div>`;
+        // Append the HTML to the container
+        bookListCon.insertAdjacentHTML('beforeend', gradeHTML);
+    }
     addEventListenerToBooks();
 
 }
