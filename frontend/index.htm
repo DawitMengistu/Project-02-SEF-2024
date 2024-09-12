@@ -15,7 +15,23 @@
 </head>
 
 <body>
-    <div class="nav"></div>
+    <div class="nav">
+        <div></div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle m-2 " data-bs-toggle="dropdown"
+                aria-expanded="false">Notes</button>
+
+            <ul class="dropdown-menu">
+                
+                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                <!-- <li>
+                    <hr class="dropdown-divider">
+                </li> -->
+            </ul>
+        </div>
+
+    </div>
     <div class="page-con">
         <div class="side-con">
             <!-- book list -->
@@ -48,7 +64,12 @@
                         <textarea name="" class="note-area-input note-input"></textarea>
                     </div>
                     <div class="save-btn-con">
-                        <div class="save-note-btn">SAVE</div>
+                        <div class="save-note-btn">
+                            <div class="save-text">SAVE</div>
+                            <div class="loading hide">
+                                <img src="./assets/loading.svg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,6 +80,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="./scripts/loadBook.js"></script>
+    <script src="./scripts/notes.js"></script>
 </body>
 
 </html>
