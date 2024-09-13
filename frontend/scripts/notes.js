@@ -30,6 +30,7 @@ saveBtn.addEventListener("click", () => {
             loading.classList.add("hide");
 
             alert(data.message)
+            getNotes();
         }
         )
         .catch(error => console.error(error));
@@ -42,7 +43,7 @@ async function getNotes() {
         .then(response => response.json())
         .then(data => {
             notes = data;
-
+            dropdownMenu.innerHTML = "";
             data.forEach(singleNote => {
                 dropdownMenu.innerHTML += `<li><a class="dropdown-item" >${singleNote.title}</a></li>`
             });
@@ -60,7 +61,7 @@ function eventListenerForLoadNotes() {
         loadNotes[i].addEventListener("click", () => {
             title.value = notes[i].title
             note.value = notes[i].note;
-            
+
         });
     }
 }

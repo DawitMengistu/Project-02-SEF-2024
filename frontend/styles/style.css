@@ -1,6 +1,6 @@
 :root {
     --border-main: #C7C7C7;
-    --blue-main: rgb(158, 158, 251);
+    --blue-main: #0D6EFD;
 }
 
 body {
@@ -10,6 +10,7 @@ body {
     font-family: "Poppins", sans-serif;
     overflow: hidden;
 }
+
 .hide {
     display: none !important;
 }

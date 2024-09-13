@@ -1,0 +1,27 @@
+.chat-ai-con {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 90% 1fr;
+    background-color: white;
+    padding: 10px;
+}
+
+.response-con {
+    border: solid 1px var(--border-main);
+    margin-block: 10px;
+    background-color: white;
+   
+}
+.input-for-ai {
+    width: 100%;
+    padding-block: 5px;
+}
+.send-ai {
+
+}
+.input-send-con {
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    height: 40px;
+    gap: 10px;
+}

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/side.css">
     <link rel="stylesheet" href="./styles/notechat.css">
+    <link rel="stylesheet" href="./styles/ai.css">
 </head>
 
 <body>
@@ -54,7 +55,8 @@
 
             <div class="note-chat-con">
                 <div class="chat-nav">
-
+                    <div class="notes-nav-btn nav-btn focused">NOTES</div>
+                    <div class="ai-nav-btn nav-btn">AI ASSISTANCE</div>
                 </div>
                 <div class="note-con">
                     <div class="note-tittle-con">
@@ -72,6 +74,14 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="chat-ai-con hide">
+                    <div class="response-con"></div>
+                    <div class="input-send-con">
+                        <input type="text" class="input-for-ai">
+                        <button type="button" class="send-ai btn btn-secondary rounded-0">Send</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -81,6 +91,7 @@
         crossorigin="anonymous"></script>
     <script src="./scripts/loadBook.js"></script>
     <script src="./scripts/notes.js"></script>
+    <script src="./scripts/ai.js"></script>
 </body>
 
 </html>
