@@ -24,7 +24,7 @@
                 aria-expanded="false">Notes</button>
 
             <ul class="dropdown-menu">
-                
+
                 <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 <!-- <li>
                     <hr class="dropdown-divider">
@@ -76,10 +76,19 @@
                 </div>
 
                 <div class="chat-ai-con hide">
-                    <div class="response-con"></div>
+                    <div class="response-con">
+                        <div class="human-question-con">
+                            Hi
+                        </div>
+
+                        <div class="ai-res-con">Hi! How can I help you today?</div>
+                    </div>
                     <div class="input-send-con">
                         <input type="text" class="input-for-ai">
-                        <button type="button" class="send-ai btn btn-secondary rounded-0">Send</button>
+                        <button type="button" class="send-ai btn btn-secondary rounded-0">
+                            <div class="ai-send-text">Send</div>
+                            <img class="loading-ai hide" src="./assets/loading.svg" alt="">
+                        </button>
                     </div>
                 </div>
             </div>

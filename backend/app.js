@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import cors from "cors"
 import { getBooksInFolders } from './functions.js';
+import { getAssistance } from './ai.js';
 
 const PORT = 3000;
 
@@ -79,6 +80,15 @@ app.post("/savenotes", (req, res) => {
 
 app.get("/notes", (req, res) => {
     res.json(notes)
+})
+
+app.post("/assistance", async (req, res) => {
+    if (req.body.prompt) {
+        const response = await getAssistance(req.body.prompt)
+        res.json({ message: "success", response: response })
+    } else {
+        res.json({ message: "error", response: "something went wrong" })
+    }
 })
 
 
